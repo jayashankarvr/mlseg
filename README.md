@@ -2,7 +2,7 @@
 
 A rule-based Malayalam surface segmenter. Given an inflected word, it splits it
 into a stem plus its case / number suffixes. It is the rough inverse companion to
-[`mlsynth`](https://github.com/jayashankarvr/mlsynth) (which generates inflected
+[`mlinflect`](https://github.com/jayashankarvr/mlinflect) (which generates inflected
 forms): `mlseg` takes one apart.
 
 ```python
