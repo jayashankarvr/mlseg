@@ -61,14 +61,14 @@ What it deliberately does NOT do (honesty over completeness):
     fallback for unanalysed words.
 
 Note on normalisation: callers may pass already-normalised text; for safety the
-input is run through ``mlnorm.normalize`` so geminate / chillu comparisons are
+input is run through ``mlnormalize.normalize`` so geminate / chillu comparisons are
 byte-stable. The pieces returned are themselves normalised.
 """
 from __future__ import annotations
 
 from typing import List
 
-import mlnorm as _mlnorm
+import mlnormalize as _mlnormalize
 
 # --- Malayalam codepoints used by the rules ----------------------------------
 VIRAMA = "്"
@@ -111,7 +111,7 @@ _TTA_REVERTED = TTA + VIRAMA                        # ട്
 
 
 def _norm(s: str) -> str:
-    return _mlnorm.normalize(s)
+    return _mlnormalize.normalize(s)
 
 
 def _aksharas(s: str) -> int:

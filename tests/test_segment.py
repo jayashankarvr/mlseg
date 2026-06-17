@@ -9,7 +9,7 @@ the segmenter is idempotent on the pieces it produces.
 """
 from __future__ import annotations
 
-import mlnorm
+import mlnormalize
 import pytest
 
 from mlseg import segment
@@ -179,4 +179,4 @@ def test_input_is_normalized():
     # Output pieces are normalized; a normalized input round-trips identically.
     word = "വീട്ടിൽ"
     pieces = segment(word)
-    assert pieces == [mlnorm.normalize(p) for p in pieces]
+    assert pieces == [mlnormalize.normalize(p) for p in pieces]

@@ -49,9 +49,9 @@ pip install mlseg
 pip install -e ".[dev]"
 ```
 
-`mlseg` depends on `mlnorm` for input normalisation, so geminate and chillu comparisons
-are byte-stable. Until `mlnorm` is published to PyPI, install it from source first:
-`pip install "git+https://github.com/jayashankarvr/mlnorm.git#subdirectory=bindings"`.
+`mlseg` depends on `mlnormalize` for input normalisation, so geminate and chillu
+comparisons are byte-stable. It is on PyPI, so `pip install mlseg` pulls it in
+automatically.
 
 ## License
 

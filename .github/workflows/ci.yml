@@ -16,14 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      # mlnorm is a PyO3 (Rust) package and is not on PyPI yet, so it is built
-      # from its GitHub source here. The wheel lives in mlnorm's bindings/ dir
-      # (maturin). Once mlnorm is published this whole block becomes a plain
-      # `pip install mlnorm`.
-      - uses: dtolnay/rust-toolchain@stable
-      - name: Install mlnorm from source
-        run: pip install "git+https://github.com/jayashankarvr/mlnorm.git#subdirectory=bindings"
       - name: Install mlseg
+        # Pulls mlnormalize (the PyO3 normalizer wheel) from PyPI via the dependency.
         run: pip install -e ".[dev]"
       - name: Run tests
         run: pytest -q
@@ -45,4 +39,4 @@ jobs:
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-        run: twine upload dist/*
+        run: twine upload --skip-existing dist/*
