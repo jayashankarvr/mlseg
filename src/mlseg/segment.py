@@ -214,8 +214,15 @@ def segment(word: str) -> List[str]:
                 rest = cand
                 suffixes.insert(0, DIRECTIVE)
         else:
-            cand = rest[: -len(DIRECTIVE)]   # leave the ി on the stem
-            if not _too_short(cand):
+            cand = rest[: -len(DIRECTIVE)]   # ...ി on the stem
+            base = cand[:-1]                  # drop the ി
+            if base and base[-1] in _TO_CHILLU:
+                # chillu noun: restore the lemma (കടല -> കടൽ) like the locative branch
+                restored = _restore_chillu_lemma(base)
+                if not _too_short(restored):
+                    rest = restored
+                    suffixes.insert(0, DIRECTIVE)
+            elif not _too_short(cand):        # vowel-final stem: keep the ി
                 rest = cand
                 suffixes.insert(0, DIRECTIVE_V)
 

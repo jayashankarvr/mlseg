@@ -31,6 +31,13 @@ def test_geminate_reversion_directive():
     assert segment("നാട്ടിലേക്ക്") == ["നാട്", "ലേക്ക്"]
 
 
+def test_directive_restores_chillu_lemma():
+    # A chillu-final noun restores its lemma before the directive, like the locative
+    # (കടലിലേക്ക് -> കടൽ, parallel to കടലിൽ -> കടൽ). A vowel-final stem keeps its ി.
+    assert segment("കടലിലേക്ക്") == ["കടൽ", "ലേക്ക്"]
+    assert segment("സ്കൂളിലേക്ക്") == ["സ്കൂൾ", "ലേക്ക്"]
+
+
 def test_geminate_reversion_compound_stem():
     # multi-syllable stem പാലക്കാട്ടി -> പാലക്കാട് + ഇൽ
     assert segment("പാലക്കാട്ടിൽ") == ["പാലക്കാട്", "ഇൽ"]
