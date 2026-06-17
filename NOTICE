@@ -1,0 +1,9 @@
+mlseg
+Copyright 2026 Jayashankar R
+
+This product includes software developed for permissive, rule-based Malayalam
+surface segmentation.
+
+Linguistic rules implemented here are restated facts drawn from published
+scholarship and native-reviewer ratification (see REFERENCES.md). No third-party
+text, tables, code, or datasets are included or redistributed.
