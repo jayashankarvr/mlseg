@@ -169,7 +169,7 @@ def test_known_limitation_proper_name_false_split():
     assert segment("അനിൽ") == ["അൻ", "ഇൽ"]  # stem chillu-restored; still a wrong split of a name
 
 
-# --- Robustness --------------------------------------------------------------
+# edge cases: empty input, normalization round-trip
 
 def test_empty_string():
     assert segment("") == [""]

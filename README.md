@@ -10,7 +10,7 @@ from mlseg import segment
 
 segment("കുട്ടികൾ")        # ['കുട്ടി', 'കൾ']
 segment("വീട്ടിൽ")          # ['വീട്', 'ഇൽ']
-segment("പുസ്തകങ്ങളിൽ")    # ['പുസ്തകം', 'ങ്ങൾ', 'ഇൽ']
+segment("പുസ്തകങ്ങളിൽ")  # ['പുസ്തകം', 'ങ്ങൾ', 'ഇൽ']
 segment("മരം")             # ['മരം']  (no recognised suffix, returned whole)
 ```
 
@@ -31,7 +31,7 @@ realisation has been ratified by a native reviewer. If no rule matches, it
 returns the word whole (`[word]`); it never invents a split and never fabricates
 Malayalam (no guessed viramas, no fabricated stems). A minimum-stem floor blocks
 over-stripping of real words whose tail merely looks like a suffix (മകൾ
-"daughter", കോട് "coat"). `segment` is idempotent on bare stems.
+"daughter", കോട്ട് "coat"). `segment` is idempotent on bare stems.
 
 ## Limitations
 
@@ -56,6 +56,6 @@ are byte-stable. Until `mlnorm` is published to PyPI, install it from source fir
 ## License
 
 Apache-2.0. See `LICENSE` and `NOTICE`. Contributions are accepted under Apache-2.0
-§5 (inbound = outbound); no separate CLA is required.
+section 5 (inbound = outbound); no separate CLA is required.
 
 Linguistic sources are credited in `REFERENCES.md`.
